@@ -130,7 +130,33 @@ def write_tick_summary(
     logger.info("Wrote %s", path)
 
 
-# ── Convenience wrapper ──────────────────────────────────────────────────────
+def write_decisions(
+    decisions: dict[int, dict[int, dict]],
+    output_dir: str,
+) -> None:
+    """Write per-zone decision histories to ``decisions.json``.
+
+    Parameters
+    ----------
+    decisions : dict[int, dict[int, dict]]
+        Mapping of ``{zone_id: {tick_id: {"decision": str,
+        "used_fallback": bool, "task_latency_s": float}}}``.
+    output_dir : str
+        Directory to write the file to.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    path = os.path.join(output_dir, "decisions.json")
+    # Convert int keys to strings for JSON serialization
+    serializable = {
+        str(zone_id): {
+            str(tick_id): tick_data
+            for tick_id, tick_data in ticks.items()
+        }
+        for zone_id, ticks in decisions.items()
+    }
+    with open(path, "w") as f:
+        json.dump(serializable, f, indent=2)
+    logger.info("Wrote %s", path)
 
 
 def write_all_artifacts(
@@ -138,14 +164,18 @@ def write_all_artifacts(
     tick_metrics: list[TickMetrics],
     latencies: list[ZoneTickLatency],
     output_dir: str,
+    decisions: dict[int, dict[int, dict]] | None = None,
 ) -> None:
     """Write every output artifact in one call.
 
     Delegates to :func:`write_run_config`, :func:`write_metrics_csv`,
-    :func:`write_latency_log`, and :func:`write_tick_summary`.
+    :func:`write_latency_log`, :func:`write_tick_summary`, and
+    optionally :func:`write_decisions`.
     """
     write_run_config(config, output_dir)
     write_metrics_csv(tick_metrics, output_dir)
     write_latency_log(latencies, output_dir)
     write_tick_summary(tick_metrics, output_dir)
+    if decisions is not None:
+        write_decisions(decisions, output_dir)
     logger.info("All artifacts written to %s", output_dir)

@@ -223,11 +223,11 @@ class ZoneActor:
 
     # ── Tick finalization ─────────────────────────────────────────────────
 
-    def close_tick(self, tick_id: int, fallback_policy: str) -> dict[str, Any]:
+    def close_tick(self, tick_id: int) -> dict[str, Any]:
         """Finalize the tick.
 
         If a decision was reported (async on-time), it is committed.
-        Otherwise the fallback policy is applied.
+        Otherwise the previous decision is used as a fallback.
 
         Returns
         -------
@@ -283,10 +283,7 @@ class ZoneActor:
             }
 
         # ── Fallback path ─────────────────────────────────────────────────
-        if fallback_policy == "always_previous":
-            fallback_decision = self.previous_decision
-        else:
-            raise ValueError(f"Unknown fallback_policy: {fallback_policy}")
+        fallback_decision = self.previous_decision
 
         self.decision_history[tick_id] = {
             "decision": fallback_decision,
@@ -298,11 +295,10 @@ class ZoneActor:
         self.tick_state = "CLOSED"
 
         logger.info(
-            "Zone %d: FALLBACK for tick %d → '%s' (policy=%s)",
+            "Zone %d: FALLBACK for tick %d → '%s'",
             self.zone_id,
             tick_id,
             fallback_decision,
-            fallback_policy,
         )
         return {
             "status": "FALLBACK",

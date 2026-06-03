@@ -34,9 +34,6 @@ FILES = [
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
-
-
 def _progress_hook(block_num: int, block_size: int, total_size: int) -> None:
     """Print a simple progress bar to stdout."""
     downloaded = block_num * block_size
@@ -113,8 +110,6 @@ def download_files(
 
     return paths
 
-
-# ── CLI entry point ──────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     downloaded = download_files()

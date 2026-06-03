@@ -37,7 +37,9 @@ def select_slow_zones(
     """
     if not active_zones or fraction <= 0:
         return set()
-
+    # Deterministically select ceil(N * fraction) zones to be slow.
+    # Using a seeded RNG keeps skew injection reproducible across runs.
+    # Returned as a set for O(1) membership checks during scoring.
     k = max(1, math.ceil(len(active_zones) * fraction))
     rng = random.Random(seed)
     selected = rng.sample(list(active_zones), k)

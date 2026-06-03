@@ -157,7 +157,6 @@ def _make_config(mode: str, prepared_dir: str, output_dir: str, **overrides) -> 
     """
     defaults = dict(
         mode=mode,
-        fallback_policy="always_previous",
         tick_minutes=TICK_MINUTES,
         max_inflight_zones=4,
         tick_timeout_s=TICK_TIMEOUT_S,
@@ -387,7 +386,7 @@ class TestZoneActorInvariants:
         assert status["active_tick_id"] == 0
 
         # Close
-        result = ray.get(actor.close_tick.remote(0, "always_previous"))
+        result = ray.get(actor.close_tick.remote(0))
         assert result["status"] in ("ON_TIME", "FALLBACK")
         status = ray.get(actor.get_status.remote())
         assert status["tick_state"] == "CLOSED"
@@ -411,7 +410,7 @@ class TestZoneActorInvariants:
         """Report after close_tick returns LATE."""
         actor = self._make_actor()
         ray.get(actor.activate_tick.remote(0))
-        ray.get(actor.close_tick.remote(0, "always_previous"))
+        ray.get(actor.close_tick.remote(0))
 
         # Late report
         result = ray.get(actor.report_decision.remote(0, "NEED", 0.5))
@@ -442,7 +441,7 @@ class TestZoneActorInvariants:
         ray.get(actor.activate_tick.remote(0))
 
         # Close without reporting — should trigger fallback
-        result = ray.get(actor.close_tick.remote(0, "always_previous"))
+        result = ray.get(actor.close_tick.remote(0))
         assert result["status"] == "FALLBACK"
         assert result["decision"] == "OK"  # default previous is "OK"
 
@@ -464,7 +463,7 @@ class TestDemoPatterns:
         output_dir = str(tmp_path / "blocking_out")
         config = _make_config("blocking", prepared_dir, output_dir)
 
-        tick_metrics, latencies = run_blocking(config)
+        tick_metrics, latencies, _decisions = run_blocking(config)
 
         # All ticks complete (zones_completed == zones_total)
         for tm in tick_metrics:
@@ -494,7 +493,7 @@ class TestDemoPatterns:
         output_dir = str(tmp_path / "async_out")
         config = _make_config("async", prepared_dir, output_dir)
 
-        tick_metrics, latencies = run_async(config)
+        tick_metrics, latencies, _decisions = run_async(config)
 
         # Some ticks should have fallbacks (slow zones miss the deadline)
         total_fallbacks = sum(tm.zones_fallback for tm in tick_metrics)
@@ -517,7 +516,7 @@ class TestDemoPatterns:
         output_dir = str(tmp_path / "stress_out")
         config = _make_config("stress", prepared_dir, output_dir)
 
-        tick_metrics, latencies = run_stress(config)
+        tick_metrics, latencies, _decisions = run_stress(config)
 
         # System still progresses — all ticks complete
         assert len(tick_metrics) > 0, "No ticks completed in stress mode"
@@ -543,12 +542,12 @@ class TestDemoPatterns:
         # Run blocking
         blocking_out = str(tmp_path / "cmp_blocking")
         blocking_cfg = _make_config("blocking", prepared_dir, blocking_out)
-        blocking_metrics, blocking_lat = run_blocking(blocking_cfg)
+        blocking_metrics, blocking_lat, _decisions = run_blocking(blocking_cfg)
 
         # Run async
         async_out = str(tmp_path / "cmp_async")
         async_cfg = _make_config("async", prepared_dir, async_out)
-        async_metrics, async_lat = run_async(async_cfg)
+        async_metrics, async_lat, _decisions = run_async(async_cfg)
 
         # Compute mean tick latencies
         blocking_mean = _mean([tm.tick_latency_s for tm in blocking_metrics])
@@ -592,7 +591,7 @@ class TestDemoPatterns:
             tick_timeout_s=0.5,          # but timeout is only 0.5s
             completion_fraction=0.5,     # close when 50% ready
         )
-        tick_metrics, latencies = run_async(config)
+        tick_metrics, latencies, _decisions = run_async(config)
 
         # Give late tasks time to report to actors
         time.sleep(4.0)
@@ -615,7 +614,7 @@ class TestDemoPatterns:
             tick_timeout_s=5.0,          # generous timeout
             completion_fraction=1.0,     # wait for all
         )
-        tick_metrics, latencies = run_async(config)
+        tick_metrics, latencies, _decisions = run_async(config)
 
         total_duplicates = sum(tm.duplicate_reports for tm in tick_metrics)
         assert total_duplicates > 0, "Expected duplicate reports with probability=1.0"
@@ -634,7 +633,7 @@ class TestArtifacts:
         """Run blocking mode and write all artifacts."""
         output_dir = str(tmp_path / "artifact_out")
         config = _make_config("blocking", prepared_dir, output_dir)
-        tick_metrics, latencies = run_blocking(config)
+        tick_metrics, latencies, _decisions = run_blocking(config)
         write_all_artifacts(config, tick_metrics, latencies, output_dir)
         return output_dir, tick_metrics, latencies
 

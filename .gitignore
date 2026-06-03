@@ -9,3 +9,4 @@ build/
 prepared_assets/
 output/
 *.parquet
+prepared/

@@ -20,12 +20,6 @@ class RunConfig:
     ----------
     mode : str
         Execution mode: ``"blocking"``, ``"async"``, or ``"stress"``.
-    fallback_policy : str
-        Policy applied when a zone misses its tick deadline.
-        ``"previous_else_ok"`` re-uses the last accepted decision
-        (defaulting to ``"OK"`` on the very first tick).
-        ``"always_previous"`` behaves identically but is stricter
-        on subsequent ticks.
     tick_minutes : int
         Width of each replay tick window in minutes.
     max_inflight_zones : int
@@ -48,10 +42,13 @@ class RunConfig:
         Path to the directory containing prepared assets.
     output_dir : str
         Path to the directory where run artifacts are written.
+    max_ticks : int | None
+        Optional cap on the number of ticks to process.  ``None`` means
+        process all available ticks (the default).  Useful for quick
+        demo runs.
     """
 
     mode: str
-    fallback_policy: str = "always_previous"
     tick_minutes: int = 15
     max_inflight_zones: int = 4
     tick_timeout_s: float = 2.0
@@ -62,6 +59,7 @@ class RunConfig:
     ray_address: str | None = None
     prepared_dir: str = ""
     output_dir: str = ""
+    max_ticks: int | None = None
 
     # ── Serialization ─────────────────────────────────────────────────────
 
@@ -99,7 +97,6 @@ class RunConfig:
 
         return cls(
             mode="stress",
-            fallback_policy=base.fallback_policy,
             tick_minutes=base.tick_minutes,
             max_inflight_zones=base.max_inflight_zones,
             tick_timeout_s=1.5,
@@ -110,4 +107,5 @@ class RunConfig:
             ray_address=base.ray_address,
             prepared_dir=base.prepared_dir,
             output_dir=base.output_dir,
+            max_ticks=base.max_ticks,
         )

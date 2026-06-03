@@ -180,9 +180,21 @@ def score_and_report(
     status = ray.get(
         actor_handle.report_decision.remote(tick_id, decision, task_latency_s)
     )
+    logger.debug(
+        "Zone %d tick %d report status=%s",
+        snapshot_dict["zone_id"],
+        tick_id,
+        status,
+    )
 
     # ── Optional duplicate report for demonstration ───────────────────────
     if duplicate_report_probability > 0 and random.random() < duplicate_report_probability:
         dup_status = ray.get(
             actor_handle.report_decision.remote(tick_id, decision, task_latency_s)
+        )
+        logger.debug(
+            "Zone %d tick %d duplicate report status=%s",
+            snapshot_dict["zone_id"],
+            tick_id,
+            dup_status,
         )

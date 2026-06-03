@@ -68,9 +68,10 @@ def main() -> int:
     run.add_argument("--completion-fraction", type=float, default=0.75)
     run.add_argument("--slow-zone-fraction", type=float, default=0.25)
     run.add_argument("--slow-zone-sleep-s", type=float, default=1.0)
-    run.add_argument("--fallback-policy", choices=["always_previous"], default="always_previous")
     run.add_argument("--duplicate-report-probability", type=float, default=0.0)
     run.add_argument("--ray-address", default=None)
+    run.add_argument("--max-ticks", type=int, default=None,
+                     help="Cap the number of ticks processed (for demo runs).")
 
     args = parser.parse_args()
 
@@ -100,7 +101,6 @@ def main() -> int:
 
         config = RunConfig(
             mode=args.mode,
-            fallback_policy=args.fallback_policy,
             max_inflight_zones=args.max_inflight_zones,
             tick_timeout_s=args.tick_timeout_s,
             completion_fraction=args.completion_fraction,
@@ -110,6 +110,7 @@ def main() -> int:
             ray_address=args.ray_address,
             prepared_dir=args.prepared_dir,
             output_dir=args.output_dir,
+            max_ticks=args.max_ticks,
         )
 
         os.makedirs(config.output_dir, exist_ok=True)
@@ -123,16 +124,16 @@ def main() -> int:
 
         try:
             if config.mode == "blocking":
-                tick_metrics, latencies = run_blocking(config)
+                tick_metrics, latencies, decisions = run_blocking(config)
             elif config.mode == "async":
-                tick_metrics, latencies = run_async(config)
+                tick_metrics, latencies, decisions = run_async(config)
             elif config.mode == "stress":
-                tick_metrics, latencies = run_stress(config)
+                tick_metrics, latencies, decisions = run_stress(config)
             else:
                 logger.error("Unknown mode: %s", config.mode)
                 return 1
 
-            write_all_artifacts(config, tick_metrics, latencies, config.output_dir)
+            write_all_artifacts(config, tick_metrics, latencies, config.output_dir, decisions=decisions)
             logger.info("Run complete. Artifacts written to %s", config.output_dir)
         finally:
             ray.shutdown()

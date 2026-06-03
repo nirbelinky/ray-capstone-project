@@ -66,7 +66,24 @@ def _init_runtime(
 
     n_ticks: int = meta["n_ticks"]
 
-    # ── Build per-zone data partitions ────────────────────────────────────
+    # Apply optional cap for demo / quick runs.
+    if config.max_ticks is not None:
+        n_ticks = min(n_ticks, config.max_ticks)
+
+    # Build actor-local data partitions for each zone.
+    #
+    # replay_data:
+    #   tick_id -> {"demand", "hour_of_day", "day_of_week"}
+    #   Example:
+    #       {0: {"demand": 12, "hour_of_day": 8, "day_of_week": 1}}
+    #
+    # baseline_data:
+    #   (hour_of_day, day_of_week) -> {"mean_demand", "std_demand"}
+    #   Example:
+    #       {(8, 1): {"mean_demand": 10.0, "std_demand": 3.0}}
+    #
+    # Each ZoneActor receives only its own zone's replay and baseline data,
+    # allowing fast O(1) lookups during tick processing without DataFrame scans.
     actors: dict[int, Any] = {}
 
     for zone_id in active_zones:
@@ -106,10 +123,9 @@ def _init_runtime(
 
 # ── Blocking driver ──────────────────────────────────────────────────────────
 
-
 def run_blocking(
     config: RunConfig,
-) -> tuple[list[TickMetrics], list[ZoneTickLatency]]:
+) -> tuple[list[TickMetrics], list[ZoneTickLatency], dict[int, dict[int, dict]]]:
     """Blocking driver — waits for **all** scoring tasks every tick.
 
     Every zone completes before the tick is finalized, so there are
@@ -153,7 +169,7 @@ def run_blocking(
         # Step G: Close ticks
         close_results = ray.get(
             [
-                actors[z].close_tick.remote(tick_id, config.fallback_policy)
+                actors[z].close_tick.remote(tick_id)
                 for z in active_zones
             ]
         )
@@ -199,22 +215,29 @@ def run_blocking(
             tick_metrics.tick_latency_s,
         )
 
-    return all_tick_metrics, all_latencies
+    # Step H: Collect actor decision histories for artifact output
+    decision_histories: dict[int, dict[int, dict]] = {}
+    for z in active_zones:
+        decision_histories[z] = ray.get(actors[z].get_decision_history.remote())
+
+    return all_tick_metrics, all_latencies, decision_histories
 
 
 # ── Async driver ─────────────────────────────────────────────────────────────
 
-
 def run_async(
     config: RunConfig,
-) -> tuple[list[TickMetrics], list[ZoneTickLatency]]:
-    """Async driver — actor-reporting / polling design.
+) -> tuple[list[TickMetrics], list[ZoneTickLatency], dict[int, dict[int, dict]]]:
+    """Async driver — actor-reporting with ``ray.wait()`` completion tracking.
 
     Scoring tasks report directly to :class:`ZoneActor` instances via
-    :func:`score_and_report`.  The driver polls actors for readiness
-    and closes the tick when enough actors have reported or the
-    deadline expires.  Tasks that finish after ``close_tick`` produce
-    late reports naturally.
+    :func:`score_and_report`.  The driver tracks task completion via
+    ``ray.wait()`` on the scoring refs rather than polling actors.
+    Because :func:`score_and_report` calls ``report_decision`` on the
+    actor before returning, a completed ref implies the actor has
+    already received its report.  The tick is closed when enough zones
+    complete or the deadline expires.  Tasks that finish after
+    ``close_tick`` produce late reports naturally.
     """
     actors, active_zones, slow_zones, n_ticks = _init_runtime(config)
     all_tick_metrics: list[TickMetrics] = []
@@ -225,7 +248,7 @@ def run_async(
     prev_total_dup = 0
 
     for tick_id in range(n_ticks):
-        tick_start = time.time()
+        tick_wall_start = time.time()
 
         # Step D: Activate tick
         ray.get([actors[z].activate_tick.remote(tick_id) for z in active_zones])
@@ -235,16 +258,35 @@ def run_async(
             [actors[z].get_snapshot.remote(tick_id) for z in active_zones]
         )
 
-        # Step E: Launch scoring tasks with bounded concurrency
-        # Tasks report directly to actors — driver treats refs as
-        # fire-and-forget (does NOT ray.get them or cancel them).
-        inflight_refs: list[ray.ObjectRef] = []
+        # Fix 1: Start the scoring deadline AFTER setup (activate + snapshot),
+        # so setup time does not eat into the tick_timeout_s budget.
+        scoring_start = time.time()
+        deadline = scoring_start + config.tick_timeout_s
+        min_complete = max(
+            1, math.ceil(len(active_zones) * config.completion_fraction)
+        )
+
+        # Steps E+F: Interleaved launch + completion-tracking loop.
+        # Tasks report directly to actors and return no decision payload.
+        # The driver keeps task refs only for throttling/completion tracking;
+        # accepted decision state still lives in the ZoneActor.
+        # Instead of polling actors with is_ready, we track task completion
+        # via ray.wait() on the scoring refs. When a ref completes, the
+        # corresponding zone's scoring task has finished (and has already
+        # called actor.report_decision inside it), so ref completion is a
+        # valid proxy for zone readiness.
+        pending_refs: dict[ray.ObjectRef, int] = {}  # ref → zone_id
+        completed_zones: set[int] = set()
         remaining_snaps = list(snapshots)
+        # Keep refs alive so late-running tasks are not garbage-collected
+        # before they can deliver their report to the actor.
+        # NOTE: For long runs (thousands of ticks), this list grows linearly.
+        # In production, periodically prune refs for completed ticks.
         all_refs: list[ray.ObjectRef] = []
 
-        while remaining_snaps:
-            # Launch tasks up to the inflight limit
-            while remaining_snaps and len(inflight_refs) < config.max_inflight_zones:
+        while True:
+            # ── Launch tasks up to inflight limit ─────────────────────
+            while remaining_snaps and len(pending_refs) < config.max_inflight_zones:
                 snap = remaining_snaps.pop(0)
                 zid = snap["zone_id"]
                 ref = score_and_report.remote(
@@ -254,35 +296,38 @@ def run_async(
                     config.slow_zone_sleep_s,
                     config.duplicate_report_probability,
                 )
-                inflight_refs.append(ref)
+                pending_refs[ref] = zid
                 all_refs.append(ref)
 
-            # Wait for at least one to finish before launching more
-            if remaining_snaps and inflight_refs:
-                done, inflight_refs = ray.wait(
-                    inflight_refs, num_returns=1, timeout=0.1
-                )
-
-        # Step F: Poll actors for readiness
-        deadline = tick_start + config.tick_timeout_s
-        min_complete = max(
-            1, math.ceil(len(active_zones) * config.completion_fraction)
-        )
-
-        while time.time() < deadline:
-            readiness = ray.get(
-                [actors[z].is_ready.remote(tick_id) for z in active_zones]
-            )
-            completed_count = sum(readiness)
-            if completed_count >= min_complete:
+            # ── Check exit conditions ─────────────────────────────────
+            if len(completed_zones) >= min_complete:
                 break
-            time.sleep(0.05)  # small sleep to avoid busy-polling
+            if time.time() >= deadline:
+                break
+
+            # ── Wait for at least one task to complete ────────────────
+            if pending_refs:
+                remaining_timeout = max(0.05, deadline - time.time())
+                done, _ = ray.wait(
+                    list(pending_refs.keys()),
+                    num_returns=1,
+                    timeout=min(0.05, remaining_timeout),
+                )
+                for ref in done:
+                    zid = pending_refs.pop(ref)
+                    try:
+                        ray.get(ref)  # score_and_report returns None; raises on task failure
+                        completed_zones.add(zid)
+                    except Exception:
+                        logger.exception("Scoring task failed for zone %d tick %d", zid, tick_id)
+            else:
+                time.sleep(0.05)
 
         # Step G: Close all ticks (actors apply fallback for unreported zones)
         # NOTE: Do NOT cancel all_refs — let them run and produce late reports
         close_results: list[dict] = ray.get(
             [
-                actors[z].close_tick.remote(tick_id, config.fallback_policy)
+                actors[z].close_tick.remote(tick_id)
                 for z in active_zones
             ]
         )
@@ -320,9 +365,9 @@ def run_async(
 
         tick_metrics = TickMetrics(
             tick_id=tick_id,
-            tick_start_ts=tick_start,
+            tick_start_ts=tick_wall_start,
             tick_end_ts=tick_end,
-            tick_latency_s=tick_end - tick_start,
+            tick_latency_s=tick_end - tick_wall_start,
             zones_total=len(active_zones),
             zones_completed=zones_completed,
             zones_fallback=zones_fallback,
@@ -358,7 +403,12 @@ def run_async(
             zones_fallback,
         )
 
-    return all_tick_metrics, all_latencies
+    # Step H: Collect actor decision histories for artifact output
+    decision_histories: dict[int, dict[int, dict]] = {}
+    for z in active_zones:
+        decision_histories[z] = ray.get(actors[z].get_decision_history.remote())
+
+    return all_tick_metrics, all_latencies, decision_histories
 
 
 # ── Stress driver ────────────────────────────────────────────────────────────
@@ -366,7 +416,7 @@ def run_async(
 
 def run_stress(
     config: RunConfig,
-) -> tuple[list[TickMetrics], list[ZoneTickLatency]]:
+) -> tuple[list[TickMetrics], list[ZoneTickLatency], dict[int, dict[int, dict]]]:
     """Stress driver — async mode with harsher skew parameters.
 
     Applies :meth:`RunConfig.stress_overrides` then delegates to

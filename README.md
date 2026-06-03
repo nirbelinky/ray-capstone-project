@@ -16,12 +16,62 @@ policies, and idempotent writes behave in a distributed setting.
 | [`prepare.py`](prepare.py) | Data preprocessing — validates adjacent months, selects active zones, builds reference baselines and replay tick tables, writes prepared assets to disk |
 | [`zone_actor.py`](zone_actor.py) | `ZoneActor` — a `@ray.remote` actor class (one per active zone) that owns mutable zone state, enforces tick lifecycle (`INACTIVE → ACTIVE → CLOSED`), and guarantees idempotent writes keyed by `(zone_id, tick_id)` |
 | [`scoring.py`](scoring.py) | `score_zone` — a `@ray.remote` stateless task that receives a `ZoneSnapshot`, computes a z-score decision (`NEED` if z > 1.5, else `OK`), injects skew delay for slow zones, and optionally reports the result to the zone's actor (async mode) |
-| [`driver.py`](driver.py) | Driver loops — `run_blocking` (waits for all zones), `run_async` (polls actor readiness with `ray.wait()` and bounded inflight), and `run_stress` (async with harsher skew parameters) |
+| [`driver.py`](driver.py) | Driver loops — `run_blocking` (waits for all zones), `run_async` (tracks `score_and_report` task-ref completion with `ray.wait()` and bounded inflight), and `run_stress` (async with harsher skew parameters) |
 | [`artifacts.py`](artifacts.py) | Output artifact writers — `run_config.json`, `metrics.csv`, `latency_log.json`, `tick_summary.json` |
 | [`models.py`](models.py) | Shared data models — `ZoneSnapshot`, `ScoringResult`, `TickMetrics`, `ZoneTickLatency` |
 | [`config.py`](config.py) | `RunConfig` dataclass with defaults, JSON serialization, and `stress_overrides()` factory |
 | [`skew.py`](skew.py) | Skew injection — deterministic slow-zone selection and artificial sleep |
 | [`main.py`](main.py) | CLI entry point with `prepare` and `run` subcommands |
+
+---
+
+## Async Completion Semantics
+
+In **async** and **stress** modes the driver never polls actors directly.
+Instead, completion tracking piggybacks on the `score_and_report` task
+lifecycle — the driver watches **task refs** via `ray.wait()`.
+
+### How `score_and_report` works
+
+Each scoring task (`score_zone` in async mode) computes a z-score decision and
+then calls `actor.report_decision.remote()` **before returning**.  The remote
+call is awaited inside the task, so by the time the task's `ObjectRef`
+transitions to *ready* the actor has already received, validated, and persisted
+(or rejected) the decision.
+
+### Why `ray.wait()` is a valid readiness proxy
+
+The driver watches outstanding `score_and_report` task refs with `ray.wait()`.
+Because each task internally awaits `actor.report_decision()`, a completed ref
+**guarantees** the actor has accepted the decision (or logged it as
+`DUPLICATE` / `LATE`).  No additional actor polling is required — the task
+completion *is* the acknowledgment signal.
+
+> **Key invariant:** A completed `score_and_report` ref means the actor has already processed `report_decision()`. This is what makes `ray.wait()` a valid proxy for zone readiness.
+
+### Completion tracking flow
+
+1. The driver launches `score_and_report` tasks for every zone in the current
+   tick, bounded by `max_inflight_zones` concurrent tasks.
+2. Each task computes the z-score, calls `actor.report_decision.remote()`, and
+   `ray.get()`s the acknowledgment before returning.
+3. The driver calls `ray.wait()` on the pending refs.  Completed refs are
+   mapped back to zone IDs via a `ref → zone_id` dictionary.
+4. A tick closes when **`completion_fraction`** of zones have completed **or**
+   **`tick_timeout_s`** wall-clock seconds have elapsed — whichever comes
+   first.
+5. Late zones that have not reported by tick closure receive a fallback
+   decision equal to their previous tick's decision (`always_previous`
+   semantics). This is the only supported fallback behavior.
+6. Late-arriving tasks (those that complete after tick closure) are safely
+   handled by the actor's state machine, which logs them as `LATE`.
+
+### `decisions.json` artifact
+
+Final output includes `decisions.json`, which captures per-zone decision
+histories derived from **actor state** (not raw task completions).  This
+ensures the artifact reflects the actor's authoritative view — including
+fallback decisions for late zones — as required by the design doc.
 
 ---
 
@@ -62,11 +112,23 @@ python main.py run \
   --output-dir output/async/ \
   --mode async
 
+
 # Step 4: Run stress test
 python main.py run \
   --prepared-dir prepared/ \
   --output-dir output/stress/ \
   --mode stress
+
+# Quick demo: process only the first 20 ticks (any mode)
+python main.py run \
+  --prepared-dir prepared/ \
+  --output-dir output/demo/ \
+  --mode async \
+  --tick-timeout-s 0.4 \
+  --slow-zone-sleep-s 2.0 \
+  --slow-zone-fraction 0.3 \
+  --completion-fraction 0.7 \
+  --max-ticks 20
 ```
 
 ---
@@ -120,8 +182,8 @@ chosen mode, and writes output artifacts.
 | `--completion-fraction` | float | No | `0.75` | Fraction of zones required before early finalization |
 | `--slow-zone-fraction` | float | No | `0.25` | Fraction of zones designated as slow |
 | `--slow-zone-sleep-s` | float | No | `1.0` | Artificial sleep injected into slow-zone tasks |
-| `--fallback-policy` | str | No | `previous_else_ok` | Policy for late zones: `previous_else_ok` or `always_previous` |
 | `--ray-address` | str | No | `None` | Ray cluster address (`None` → local `ray.init()`) |
+| `--max-ticks` | int | No | `None` | Cap the number of ticks processed for quick demo runs |
 
 ---
 
@@ -150,11 +212,11 @@ hurts visibly because every tick must wait for every zone.
 
 ### 2. Async Controller
 
-Scoring tasks report decisions directly to actors; the driver polls actor
-readiness via `ray.wait()` and closes ticks once `completion_fraction` of
-zones finish **or** `tick_timeout_s` expires.  Late zones receive a
-deterministic fallback (`previous_else_ok` → re-use last accepted decision,
-defaulting to `OK` on the first tick).
+Scoring tasks report decisions directly to actors; the driver tracks
+completion of `score_and_report` task refs via `ray.wait()` and closes ticks
+once `completion_fraction` of zones finish **or** `tick_timeout_s` expires.
+Late zones that have not reported by tick closure receive a fallback decision
+equal to their previous tick's decision (`always_previous` semantics).
 
 **Expected behavior:** lower sensitivity to stragglers — tick wall-clock is
 bounded by the timeout rather than the slowest zone.
@@ -180,7 +242,6 @@ fallback usage.
 | `completion_fraction` | `0.75` | `0.75` |
 | `slow_zone_fraction` | `0.25` | `0.50` |
 | `slow_zone_sleep_s` | `1.0` | `3.0` |
-| `fallback_policy` | `previous_else_ok` | `previous_else_ok` |
 
 ---
 
