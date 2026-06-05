@@ -63,15 +63,14 @@ def main() -> int:
         choices=["blocking", "async", "stress"],
         required=True,
     )
-    run.add_argument("--max-inflight-zones", type=int, default=4)
-    run.add_argument("--tick-timeout-s", type=float, default=2.0)
-    run.add_argument("--completion-fraction", type=float, default=0.75)
-    run.add_argument("--slow-zone-fraction", type=float, default=0.25)
-    run.add_argument("--slow-zone-sleep-s", type=float, default=1.0)
+    run.add_argument("--max-inflight-zones", type=int, default=10)
+    run.add_argument("--tick-timeout-s", type=float, default=0.8)
+    run.add_argument("--completion-fraction", type=float, default=0.7)
+    run.add_argument("--slow-zone-fraction", type=float, default=0.3)
+    run.add_argument("--slow-zone-sleep-s", type=float, default=1.2)
     run.add_argument("--duplicate-report-probability", type=float, default=0.0)
+    run.add_argument("--max-ticks", type=int, default=20)
     run.add_argument("--ray-address", default=None)
-    run.add_argument("--max-ticks", type=int, default=None,
-                     help="Cap the number of ticks processed (for demo runs).")
 
     args = parser.parse_args()
 

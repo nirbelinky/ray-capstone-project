@@ -50,16 +50,16 @@ class RunConfig:
 
     mode: str
     tick_minutes: int = 15
-    max_inflight_zones: int = 4
-    tick_timeout_s: float = 2.0
-    completion_fraction: float = 0.75
-    slow_zone_fraction: float = 0.25
-    slow_zone_sleep_s: float = 1.0
+    max_inflight_zones: int = 10
+    tick_timeout_s: float = 0.8
+    completion_fraction: float = 0.7
+    slow_zone_fraction: float = 0.3
+    slow_zone_sleep_s: float = 1.2
     duplicate_report_probability: float = 0.0
     ray_address: str | None = None
     prepared_dir: str = ""
     output_dir: str = ""
-    max_ticks: int | None = None
+    max_ticks: int = 20
 
     # ── Serialization ─────────────────────────────────────────────────────
 
