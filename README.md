@@ -118,8 +118,14 @@ python main.py run \
   --output-dir output/async/ \
   --mode async
 
+# Step 4: Run async controller + duplicates. Shows idempotent writes
+python main.py run \
+  --prepared-dir prepared/ \
+  --output-dir output/duplicate/ \
+  --duplicate-report-probability 1.0 \
+  --mode async
 
-# Step 4: Run stress test
+# Step 5: Run stress test
 python main.py run \
   --prepared-dir prepared/ \
   --output-dir output/stress/ \
