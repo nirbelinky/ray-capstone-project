@@ -7,6 +7,5 @@ dist/
 build/
 .ray/
 prepared_assets/
-output/
 *.parquet
 prepared/

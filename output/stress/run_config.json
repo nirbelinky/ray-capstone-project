@@ -1,0 +1,14 @@
+{
+  "mode": "stress",
+  "tick_minutes": 15,
+  "max_inflight_zones": 10,
+  "tick_timeout_s": 0.8,
+  "completion_fraction": 0.7,
+  "slow_zone_fraction": 0.3,
+  "slow_zone_sleep_s": 1.2,
+  "duplicate_report_probability": 0.0,
+  "ray_address": null,
+  "prepared_dir": "prepared/",
+  "output_dir": "output/stress/",
+  "max_ticks": 20
+}

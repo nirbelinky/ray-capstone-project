@@ -1,0 +1,1022 @@
+{
+  "7": {
+    "0": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2011119580129161
+    },
+    "1": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200884916994255
+    },
+    "2": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2005033750028815
+    },
+    "3": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200161000015214
+    },
+    "4": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200523624982452
+    },
+    "5": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2008241669973359
+    },
+    "6": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2007416249834932
+    },
+    "7": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010622919769958
+    },
+    "8": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010489579988644
+    },
+    "9": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010419580037706
+    },
+    "10": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2004769999766722
+    },
+    "11": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200601499993354
+    },
+    "12": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010667079885025
+    },
+    "13": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2002430830034427
+    },
+    "14": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010689160088077
+    },
+    "15": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2007455830171239
+    },
+    "16": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2009962080046535
+    },
+    "17": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010486669896636
+    },
+    "18": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2004998749762308
+    },
+    "19": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2003660000045784
+    }
+  },
+  "41": {
+    "0": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2011012909933925
+    },
+    "1": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2001826670020819
+    },
+    "2": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2008383749925997
+    },
+    "3": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010582920047455
+    },
+    "4": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2004080829792656
+    },
+    "5": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200650750019122
+    },
+    "6": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200853833986912
+    },
+    "7": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200902832992142
+    },
+    "8": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2008591250050813
+    },
+    "9": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2008098340011202
+    },
+    "10": {
+      "decision": "NEED",
+      "used_fallback": false,
+      "task_latency_s": 1.2003018339746632
+    },
+    "11": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2005177499959245
+    },
+    "12": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200941499992041
+    },
+    "13": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200146749994019
+    },
+    "14": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200873915979173
+    },
+    "15": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2008671250077896
+    },
+    "16": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200896082998952
+    },
+    "17": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.201043666980695
+    },
+    "18": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200345124991145
+    },
+    "19": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2001246669969987
+    }
+  },
+  "43": {
+    "0": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7920101527124643e-06
+    },
+    "1": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.8329959604889154e-06
+    },
+    "2": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.5830231606960297e-06
+    },
+    "3": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.207991201430559e-06
+    },
+    "4": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9580184016376734e-06
+    },
+    "5": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.5829864423722029e-06
+    },
+    "6": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.1250161807984114e-06
+    },
+    "7": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7920101527124643e-06
+    },
+    "8": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7500133253633976e-06
+    },
+    "9": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.541986759752035e-06
+    },
+    "10": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.916982000693679e-06
+    },
+    "11": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7500133253633976e-06
+    },
+    "12": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.1249870769679546e-06
+    },
+    "13": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.249988028779626e-06
+    },
+    "14": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.2920139599591494e-06
+    },
+    "15": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.91599247045815e-06
+    },
+    "16": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.6669877115637064e-06
+    },
+    "17": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.082990249618888e-06
+    },
+    "18": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9999861251562834e-06
+    },
+    "19": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7920101527124643e-06
+    }
+  },
+  "65": {
+    "0": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.1250161807984114e-06
+    },
+    "1": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.9579969123005867e-06
+    },
+    "2": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.209009835496545e-06
+    },
+    "3": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.1249870769679546e-06
+    },
+    "4": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.667009200900793e-06
+    },
+    "5": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9590079318732023e-06
+    },
+    "6": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7499842215329409e-06
+    },
+    "7": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9170111045241356e-06
+    },
+    "8": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.040993422269821e-06
+    },
+    "9": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.834006980061531e-06
+    },
+    "10": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7500133253633976e-06
+    },
+    "11": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.1249870769679546e-06
+    },
+    "12": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7500133253633976e-06
+    },
+    "13": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7499842215329409e-06
+    },
+    "14": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9590079318732023e-06
+    },
+    "15": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7500133253633976e-06
+    },
+    "16": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9160215742886066e-06
+    },
+    "17": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.8330174498260021e-06
+    },
+    "18": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.083979779854417e-06
+    },
+    "19": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7909915186464787e-06
+    }
+  },
+  "74": {
+    "0": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2005031250009779
+    },
+    "1": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010479159944225
+    },
+    "2": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2008163330028765
+    },
+    "3": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200825291016372
+    },
+    "4": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010319999826606
+    },
+    "5": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2001955829910003
+    },
+    "6": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.200055749999592
+    },
+    "7": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2003620410105214
+    },
+    "8": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2002942909894045
+    },
+    "9": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2003202500054613
+    },
+    "10": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.201077959005488
+    },
+    "11": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2001770829956513
+    },
+    "12": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2004385830077808
+    },
+    "13": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2009272080031224
+    },
+    "14": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2002157920214813
+    },
+    "15": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010414999967907
+    },
+    "16": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2004122500075027
+    },
+    "17": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2007380000140984
+    },
+    "18": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.2010472499823663
+    },
+    "19": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.201055583980633
+    }
+  },
+  "75": {
+    "0": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.2500171326100826e-06
+    },
+    "1": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.4999899324029684e-06
+    },
+    "2": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7920101527124643e-06
+    },
+    "3": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.667009200900793e-06
+    },
+    "4": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7499842215329409e-06
+    },
+    "5": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.834006980061531e-06
+    },
+    "6": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7919810488820076e-06
+    },
+    "7": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.916982000693679e-06
+    },
+    "8": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9589788280427456e-06
+    },
+    "9": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7500133253633976e-06
+    },
+    "10": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9580184016376734e-06
+    },
+    "11": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9999861251562834e-06
+    },
+    "12": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7500133253633976e-06
+    },
+    "13": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.5829864423722029e-06
+    },
+    "14": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.374988980591297e-06
+    },
+    "15": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.5420082490891218e-06
+    },
+    "16": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.249988028779626e-06
+    },
+    "17": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.042012056335807e-06
+    },
+    "18": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.6250123735517263e-06
+    },
+    "19": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.042012056335807e-06
+    }
+  },
+  "82": {
+    "0": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.208020305261016e-06
+    },
+    "1": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.4999899324029684e-06
+    },
+    "2": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.207991201430559e-06
+    },
+    "3": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.8330174498260021e-06
+    },
+    "4": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9160215742886066e-06
+    },
+    "5": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.6249832697212696e-06
+    },
+    "6": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7080164980143309e-06
+    },
+    "7": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.667009200900793e-06
+    },
+    "8": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.4579854905605316e-06
+    },
+    "9": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.91599247045815e-06
+    },
+    "10": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7079873941838741e-06
+    },
+    "11": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.6659905668348074e-06
+    },
+    "12": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.8749851733446121e-06
+    },
+    "13": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7079873941838741e-06
+    },
+    "14": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.6249832697212696e-06
+    },
+    "15": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.6659905668348074e-06
+    },
+    "16": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.1659943740814924e-06
+    },
+    "17": {
+      "decision": "NEED",
+      "used_fallback": false,
+      "task_latency_s": 2.00001522898674e-06
+    },
+    "18": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.667009200900793e-06
+    },
+    "19": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.4170149117708206e-06
+    }
+  },
+  "95": {
+    "0": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.8749851733446121e-06
+    },
+    "1": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.5830231606960297e-06
+    },
+    "2": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7500133253633976e-06
+    },
+    "3": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.167013008147478e-06
+    },
+    "4": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.5830155462026596e-06
+    },
+    "5": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.1250161807984114e-06
+    },
+    "6": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.916982000693679e-06
+    },
+    "7": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7919810488820076e-06
+    },
+    "8": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.5839759726077318e-06
+    },
+    "9": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7499842215329409e-06
+    },
+    "10": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7080164980143309e-06
+    },
+    "11": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.4999823179095984e-06
+    },
+    "12": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.082990249618888e-06
+    },
+    "13": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.834006980061531e-06
+    },
+    "14": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.6250123735517263e-06
+    },
+    "15": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7910206224769354e-06
+    },
+    "16": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.208020305261016e-06
+    },
+    "17": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.8330174498260021e-06
+    },
+    "18": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7500133253633976e-06
+    },
+    "19": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.082990249618888e-06
+    }
+  },
+  "97": {
+    "0": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 3.583001671358943e-06
+    },
+    "1": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.374988980591297e-06
+    },
+    "2": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9580184016376734e-06
+    },
+    "3": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.083979779854417e-06
+    },
+    "4": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.5409896150231361e-06
+    },
+    "5": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7920101527124643e-06
+    },
+    "6": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9579892978072166e-06
+    },
+    "7": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.9589864425361156e-06
+    },
+    "8": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.1250161807984114e-06
+    },
+    "9": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.082990249618888e-06
+    },
+    "10": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7919810488820076e-06
+    },
+    "11": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.8750142771750689e-06
+    },
+    "12": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.834006980061531e-06
+    },
+    "13": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.667009200900793e-06
+    },
+    "14": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7080164980143309e-06
+    },
+    "15": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.4590041246265173e-06
+    },
+    "16": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9590079318732023e-06
+    },
+    "17": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.2920139599591494e-06
+    },
+    "18": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.5830155462026596e-06
+    },
+    "19": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.6249832697212696e-06
+    }
+  },
+  "166": {
+    "0": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9170111045241356e-06
+    },
+    "1": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 3.1249946914613247e-06
+    },
+    "2": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9999861251562834e-06
+    },
+    "3": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.1249870769679546e-06
+    },
+    "4": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.207991201430559e-06
+    },
+    "5": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.1249870769679546e-06
+    },
+    "6": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.209009835496545e-06
+    },
+    "7": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.6659905668348074e-06
+    },
+    "8": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7919810488820076e-06
+    },
+    "9": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7919810488820076e-06
+    },
+    "10": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.0840088836848736e-06
+    },
+    "11": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.9999861251562834e-06
+    },
+    "12": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.6250123735517263e-06
+    },
+    "13": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.667009200900793e-06
+    },
+    "14": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.4579931050539017e-06
+    },
+    "15": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.667009200900793e-06
+    },
+    "16": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.7499842215329409e-06
+    },
+    "17": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.500011421740055e-06
+    },
+    "18": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 2.040993422269821e-06
+    },
+    "19": {
+      "decision": "OK",
+      "used_fallback": false,
+      "task_latency_s": 1.8750142771750689e-06
+    }
+  }
+}

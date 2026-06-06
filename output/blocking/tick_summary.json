@@ -1,0 +1,8 @@
+{
+  "total_ticks": 20,
+  "mean_tick_latency_s": 1.2819423794746398,
+  "max_tick_latency_s": 1.9337420463562012,
+  "total_fallbacks": 0,
+  "total_late_reports": 0,
+  "total_duplicate_reports": 0
+}

@@ -1,0 +1,1402 @@
+[
+  {
+    "zone_id": 7,
+    "tick_id": 0,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 0,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 0,
+    "task_latency_s": 2.249988028779626e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 0,
+    "task_latency_s": 2.875021891668439e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 0,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 0,
+    "task_latency_s": 2.4580222088843584e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 0,
+    "task_latency_s": 2.166023477911949e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 0,
+    "task_latency_s": 2.4579931050539017e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 0,
+    "task_latency_s": 1.9999861251562834e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 0,
+    "task_latency_s": 2.249988028779626e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 1,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 1,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 1,
+    "task_latency_s": 2.874992787837982e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 1,
+    "task_latency_s": 2.207991201430559e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 1,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 1,
+    "task_latency_s": 2.3339816834777594e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 1,
+    "task_latency_s": 2.3329921532422304e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 1,
+    "task_latency_s": 3.082997864112258e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 1,
+    "task_latency_s": 2.4999899324029684e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 1,
+    "task_latency_s": 2.00001522898674e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 2,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 2,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 2,
+    "task_latency_s": 1.834006980061531e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 2,
+    "task_latency_s": 1.9160215742886066e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 2,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 2,
+    "task_latency_s": 2.1659943740814924e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 2,
+    "task_latency_s": 1.7500133253633976e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 2,
+    "task_latency_s": 1.7079873941838741e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 2,
+    "task_latency_s": 1.8750142771750689e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 2,
+    "task_latency_s": 2.582994056865573e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 3,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 3,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 3,
+    "task_latency_s": 2.1250161807984114e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 3,
+    "task_latency_s": 1.9589788280427456e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 3,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 3,
+    "task_latency_s": 2.4579931050539017e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 3,
+    "task_latency_s": 2.416985807940364e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 3,
+    "task_latency_s": 2.1669839043170214e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 3,
+    "task_latency_s": 1.8749851733446121e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 3,
+    "task_latency_s": 2.208980731666088e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 4,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 4,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 4,
+    "task_latency_s": 3.2919924706220627e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 4,
+    "task_latency_s": 2.334010787308216e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 4,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 4,
+    "task_latency_s": 2.374988980591297e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 4,
+    "task_latency_s": 2.9999937396496534e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 4,
+    "task_latency_s": 2.9170187190175056e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 4,
+    "task_latency_s": 2.7920177672058344e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 4,
+    "task_latency_s": 2.415996277704835e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 5,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 5,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 5,
+    "task_latency_s": 1.9579892978072166e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 5,
+    "task_latency_s": 2.207991201430559e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 5,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 5,
+    "task_latency_s": 2.416985807940364e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 5,
+    "task_latency_s": 2.5830231606960297e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 5,
+    "task_latency_s": 2.249988028779626e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 5,
+    "task_latency_s": 2.0830193534493446e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 5,
+    "task_latency_s": 2.1249870769679546e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 6,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 6,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 6,
+    "task_latency_s": 2.6659981813281775e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 6,
+    "task_latency_s": 2.249988028779626e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 6,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 6,
+    "task_latency_s": 2.3329921532422304e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 6,
+    "task_latency_s": 1.8749851733446121e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 6,
+    "task_latency_s": 2.1659943740814924e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 6,
+    "task_latency_s": 1.8330174498260021e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 6,
+    "task_latency_s": 2.2910244297236204e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 7,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 7,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 7,
+    "task_latency_s": 2.04198295250535e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 7,
+    "task_latency_s": 2.207991201430559e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 7,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 7,
+    "task_latency_s": 2.4999899324029684e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 7,
+    "task_latency_s": 2.1250161807984114e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 7,
+    "task_latency_s": 1.916982000693679e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 7,
+    "task_latency_s": 2.374988980591297e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 7,
+    "task_latency_s": 2.583983587101102e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 8,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 8,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 8,
+    "task_latency_s": 2.1249870769679546e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 8,
+    "task_latency_s": 2.0840088836848736e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 8,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 8,
+    "task_latency_s": 2.209009835496545e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 8,
+    "task_latency_s": 2.4999899324029684e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 8,
+    "task_latency_s": 1.7499842215329409e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 8,
+    "task_latency_s": 2.040993422269821e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 8,
+    "task_latency_s": 2.541986759752035e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 9,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 9,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 9,
+    "task_latency_s": 2.04198295250535e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 9,
+    "task_latency_s": 1.667009200900793e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 9,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 9,
+    "task_latency_s": 2.207991201430559e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 9,
+    "task_latency_s": 2.333021257072687e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 9,
+    "task_latency_s": 2.707995008677244e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 9,
+    "task_latency_s": 1.916982000693679e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 9,
+    "task_latency_s": 2.082990249618888e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 10,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 10,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 10,
+    "task_latency_s": 2.374988980591297e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 10,
+    "task_latency_s": 2.1250161807984114e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 10,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 10,
+    "task_latency_s": 2.707995008677244e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 10,
+    "task_latency_s": 1.8329883459955454e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 10,
+    "task_latency_s": 1.5829864423722029e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 10,
+    "task_latency_s": 1.9590079318732023e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 10,
+    "task_latency_s": 1.8330174498260021e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 11,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 11,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 11,
+    "task_latency_s": 1.9580184016376734e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 11,
+    "task_latency_s": 2.1249870769679546e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 11,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 11,
+    "task_latency_s": 1.8750142771750689e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 11,
+    "task_latency_s": 1.7919810488820076e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 11,
+    "task_latency_s": 1.7499842215329409e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 11,
+    "task_latency_s": 2.209009835496545e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 11,
+    "task_latency_s": 2.208020305261016e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 12,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 12,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 12,
+    "task_latency_s": 1.6250123735517263e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 12,
+    "task_latency_s": 1.4579854905605316e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 12,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 12,
+    "task_latency_s": 2.1669839043170214e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 12,
+    "task_latency_s": 2.042012056335807e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 12,
+    "task_latency_s": 1.6660196706652641e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 12,
+    "task_latency_s": 1.7079873941838741e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 12,
+    "task_latency_s": 1.8330174498260021e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 13,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 13,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 13,
+    "task_latency_s": 2.374988980591297e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 13,
+    "task_latency_s": 1.7500133253633976e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 13,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 13,
+    "task_latency_s": 1.7090060282498598e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 13,
+    "task_latency_s": 2.207991201430559e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 13,
+    "task_latency_s": 2.208980731666088e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 13,
+    "task_latency_s": 2.040993422269821e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 13,
+    "task_latency_s": 2.4579931050539017e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 14,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 14,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 14,
+    "task_latency_s": 1.8329883459955454e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 14,
+    "task_latency_s": 2.00001522898674e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 14,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 14,
+    "task_latency_s": 2.0840088836848736e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 14,
+    "task_latency_s": 1.8750142771750689e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 14,
+    "task_latency_s": 1.7500133253633976e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 14,
+    "task_latency_s": 1.8750142771750689e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 14,
+    "task_latency_s": 2.2919848561286926e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 15,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 15,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 15,
+    "task_latency_s": 2.00001522898674e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 15,
+    "task_latency_s": 1.9170111045241356e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 15,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 15,
+    "task_latency_s": 1.7499842215329409e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 15,
+    "task_latency_s": 1.9999861251562834e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 15,
+    "task_latency_s": 1.6250123735517263e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 15,
+    "task_latency_s": 1.7920101527124643e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 15,
+    "task_latency_s": 2.2919848561286926e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 16,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 16,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 16,
+    "task_latency_s": 1.6250123735517263e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 16,
+    "task_latency_s": 1.667009200900793e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 16,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 16,
+    "task_latency_s": 2.334010787308216e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 16,
+    "task_latency_s": 2.209009835496545e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 16,
+    "task_latency_s": 2.2909953258931637e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 16,
+    "task_latency_s": 2.1249870769679546e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 16,
+    "task_latency_s": 2.249988028779626e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 17,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 17,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 17,
+    "task_latency_s": 2.1249870769679546e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 17,
+    "task_latency_s": 1.7500133253633976e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 17,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 17,
+    "task_latency_s": 2.749991836026311e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 17,
+    "task_latency_s": 2.375018084421754e-06,
+    "used_fallback": false,
+    "decision": "NEED"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 17,
+    "task_latency_s": 2.1249870769679546e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 17,
+    "task_latency_s": 2.249988028779626e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 17,
+    "task_latency_s": 2.1249870769679546e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 18,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 18,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 18,
+    "task_latency_s": 1.9170111045241356e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 18,
+    "task_latency_s": 2.2500171326100826e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 18,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 18,
+    "task_latency_s": 1.9170111045241356e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 18,
+    "task_latency_s": 1.8329883459955454e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 18,
+    "task_latency_s": 1.916982000693679e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 18,
+    "task_latency_s": 1.7500133253633976e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 18,
+    "task_latency_s": 1.7920101527124643e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 7,
+    "tick_id": 19,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 41,
+    "tick_id": 19,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 43,
+    "tick_id": 19,
+    "task_latency_s": 1.9589788280427456e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 65,
+    "tick_id": 19,
+    "task_latency_s": 1.6659905668348074e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 74,
+    "tick_id": 19,
+    "task_latency_s": 0.0,
+    "used_fallback": true,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 75,
+    "tick_id": 19,
+    "task_latency_s": 1.916982000693679e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 82,
+    "tick_id": 19,
+    "task_latency_s": 1.7499842215329409e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 95,
+    "tick_id": 19,
+    "task_latency_s": 1.6250123735517263e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 97,
+    "tick_id": 19,
+    "task_latency_s": 2.00001522898674e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  },
+  {
+    "zone_id": 166,
+    "tick_id": 19,
+    "task_latency_s": 1.6660196706652641e-06,
+    "used_fallback": false,
+    "decision": "OK"
+  }
+]
