@@ -80,11 +80,17 @@ fallback decisions for late zones — as required by the design doc.
 | Requirement | Details |
 |-------------|---------|
 | Python | 3.12 |
-| Conda env | `22971-ray` (see [`environment.yml`](../environment.yml)) |
+| Conda env | `22971-ray` (see [`environment.yml`](environment.yml)) |
 | Data | Two **adjacent monthly** NYC TLC Green Taxi parquet files (e.g. `2024-01` and `2024-02`) |
 
-Download the parquet files from the
-[NYC TLC Trip Record Data page](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
+```bash
+# Create and activate the conda environment
+conda env create -f environment.yml
+conda activate 22971-ray
+
+# Download the TLC parquet files into data/
+python download_tlc_data.py
+```
 
 ---
 
@@ -96,8 +102,8 @@ conda activate 22971-ray
 
 # Step 1: Prepare assets
 python main.py prepare \
-  --reference-parquet path/to/green_tripdata_2024-01.parquet \
-  --replay-parquet path/to/green_tripdata_2024-02.parquet \
+  --reference-parquet data/green_tripdata_2024-01.parquet \
+  --replay-parquet data/green_tripdata_2024-02.parquet \
   --output-dir prepared/
 
 # Step 2: Run blocking baseline
@@ -118,17 +124,6 @@ python main.py run \
   --prepared-dir prepared/ \
   --output-dir output/stress/ \
   --mode stress
-
-# Quick demo: process only the first 20 ticks (any mode)
-python main.py run \
-  --prepared-dir prepared/ \
-  --output-dir output/demo/ \
-  --mode async \
-  --tick-timeout-s 0.4 \
-  --slow-zone-sleep-s 2.0 \
-  --slow-zone-fraction 0.3 \
-  --completion-fraction 0.7 \
-  --max-ticks 20
 ```
 
 ---
@@ -177,13 +172,14 @@ chosen mode, and writes output artifacts.
 | `--prepared-dir` | Path | Yes | — | Directory containing prepared assets |
 | `--output-dir` | Path | Yes | — | Directory for output artifacts |
 | `--mode` | str | Yes | — | Execution mode: `blocking`, `async`, or `stress` |
-| `--max-inflight-zones` | int | No | `4` | Max concurrent scoring tasks (async/stress) |
-| `--tick-timeout-s` | float | No | `2.0` | Wall-clock budget per tick before finalization |
-| `--completion-fraction` | float | No | `0.75` | Fraction of zones required before early finalization |
-| `--slow-zone-fraction` | float | No | `0.25` | Fraction of zones designated as slow |
-| `--slow-zone-sleep-s` | float | No | `1.0` | Artificial sleep injected into slow-zone tasks |
+| `--max-inflight-zones` | int | No | `10` | Max concurrent scoring tasks (async/stress) |
+| `--tick-timeout-s` | float | No | `0.8` | Wall-clock budget per tick before finalization |
+| `--completion-fraction` | float | No | `0.7` | Fraction of zones required before early finalization |
+| `--slow-zone-fraction` | float | No | `0.3` | Fraction of zones designated as slow |
+| `--slow-zone-sleep-s` | float | No | `1.2` | Artificial sleep injected into slow-zone tasks |
+| `--duplicate-report-probability` | float | No | `0.0` | Probability of sending a duplicate report (async mode) |
+| `--max-ticks` | int | No | `20` | Cap the number of ticks processed |
 | `--ray-address` | str | No | `None` | Ray cluster address (`None` → local `ray.init()`) |
-| `--max-ticks` | int | No | `None` | Cap the number of ticks processed for quick demo runs |
 
 ---
 
@@ -237,11 +233,11 @@ fallback usage.
 | Parameter | Normal (blocking / async) | Stress Override |
 |-----------|--------------------------|-----------------|
 | `tick_minutes` | `15` | `15` |
-| `max_inflight_zones` | `4` | `4` |
-| `tick_timeout_s` | `2.0` | `1.5` |
-| `completion_fraction` | `0.75` | `0.75` |
-| `slow_zone_fraction` | `0.25` | `0.50` |
-| `slow_zone_sleep_s` | `1.0` | `3.0` |
+| `max_inflight_zones` | `10` | `10` |
+| `tick_timeout_s` | `0.8` | `1.5` |
+| `completion_fraction` | `0.7` | `0.7` |
+| `slow_zone_fraction` | `0.3` | `0.50` |
+| `slow_zone_sleep_s` | `1.2` | `3.0` |
 
 ---
 
