@@ -30,7 +30,6 @@ logger = logging.getLogger(__name__)
 
 # ── Common setup ──────────────────────────────────────────────────────────────
 
-
 def _init_runtime(
     config: RunConfig,
 ) -> tuple[dict[int, Any], list[int], set[int], int]:
@@ -119,7 +118,6 @@ def _init_runtime(
         n_ticks,
     )
     return actors, active_zones, slow_zones, n_ticks
-
 
 # ── Blocking driver ──────────────────────────────────────────────────────────
 
@@ -222,7 +220,6 @@ def run_blocking(
 
     return all_tick_metrics, all_latencies, decision_histories
 
-
 # ── Async driver ─────────────────────────────────────────────────────────────
 
 def run_async(
@@ -258,7 +255,7 @@ def run_async(
             [actors[z].get_snapshot.remote(tick_id) for z in active_zones]
         )
 
-        # Fix 1: Start the scoring deadline AFTER setup (activate + snapshot),
+        # Start the scoring deadline AFTER setup (activate + snapshot),
         # so setup time does not eat into the tick_timeout_s budget.
         scoring_start = time.time()
         deadline = scoring_start + config.tick_timeout_s
@@ -410,9 +407,7 @@ def run_async(
 
     return all_tick_metrics, all_latencies, decision_histories
 
-
 # ── Stress driver ────────────────────────────────────────────────────────────
-
 
 def run_stress(
     config: RunConfig,
